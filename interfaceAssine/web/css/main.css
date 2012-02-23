@@ -1,0 +1,200 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: verdana, arial, sans-serif;
+}
+body{
+    background-image:url("img/base_background.png");
+    background-position:center 2px;
+    text-align:center;
+}
+#page{
+    width: 841px;
+    margin: 3% auto;
+
+}
+#pageHeader{
+    float: left;
+    width: 100%;
+}
+#pageHeader img.logo{
+    float:left;
+    margin-top: -11px;
+}
+#pageHeader ul.mainMenu{
+    float: left;
+    font-size: 0.85em;
+    left: 0;
+    list-style-type: none;
+    margin-left: 4px;
+    position: relative;
+    top: 20px;
+    vertical-align: middle;
+    width: 570px;
+}
+#pageHeader ul.mainMenu li{
+
+    float:left;
+    padding:0px 0 7px 24px;
+}
+#pageHeader ul.mainMenu li a{
+    color:#FFFFFF;
+    float:left;
+    font-size:1em;
+    font-weight:bold;
+    text-decoration:none;
+}
+#pageContent{
+    background-image:url("img/boxes_background.png");
+    background-repeat:no-repeat;
+    float:left;
+    margin-left:15px;
+    margin-top:10px;
+    padding-top:20px;
+}
+#pageContent .contentBox{
+    float: left;
+    height: 495px;
+    margin-right: 0;
+    width: 195px;
+}
+#pageContent #contentDetails{
+    padding-left: 11px;
+}
+#pageContent #contentPremium{
+    margin-right: 5px;
+}
+#pageContent #contentDetails.contentBox .boxTitle{
+    margin-top:40px;
+    background-image: none;
+    font-size: 1em;
+    width:100%;
+    font-weight:bold;
+}
+#pageContent #contentDetails.contentBox .showBaloon{
+    margin: 0 !important;
+}
+#pageContent #contentDetails.contentBox .boxSubTitle{
+    font-size:0.7em;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+#pageContent .contentBox .boxTitle{
+    color: #163e66;
+    margin-top:5px;
+    float: left;
+    text-align:center;
+    width:86%;
+    font-size: 1.4em;
+}
+#pageContent .contentBox .boxSubTitle{
+    font-size:0.5em;
+    width:100%;
+    float:left;
+    color:#163e66;
+}
+#pageContent .contentBox .siteValue{
+    width: 90%;
+    color: #333333;
+    font-size: 1em;
+    font-weight:bold;
+    float: left;
+    margin: 5px 5%;
+    padding: 6px 0;
+}
+#pageContent .contentBox .siteValue.selected{
+    background-color: #20446f;
+    color: #FFFFFF;
+}
+#pageContent .contentBox .separator{
+    float: left;
+    width: 90%;
+    margin: 2px 5%;
+    background: #333;
+    height: 1px;
+}
+#pageContent .contentBox ul.boxServices{
+    list-style-type:none;
+    margin-top: 5px;
+    width:100%;
+    float: left;
+}
+#pageContent .contentBox form ul.boxServices li{
+    width: 100% !important;
+}
+#pageContent .contentBox ul.boxServices li{
+    width: 90%;
+    height:30px;
+    float: left;
+    color: #163e66;
+    padding-left: 10px;
+    font-size: 0.7em;
+    text-align:left;
+}
+#pageContent .contentBox .showBaloon{
+    background-image:url("img/menu_help.png");
+    background-position:center center;
+    background-repeat:no-repeat;
+    cursor:help;
+    float:right;
+    height:16px;
+    width:16px;
+    margin-right:10px;
+    margin-top:14px;
+}
+#pageContent .contentBox form ul.boxServices  li{
+    background-image: none;
+    text-align: center;
+    padding-left: 0;
+}
+#pageContent .contentBox form ul.boxServices  li.selected{
+    background-image: url(img/check.png);
+    background-repeat: no-repeat;
+    background-position: center 2px;
+}
+#submitArea{
+    float: left;
+    width: 100%;
+}
+#submitArea button.clearButton{
+    background-image: url("img/clear_button_background.png") !important;
+}
+#submitArea button{
+    background-image: url("img/button_background.png");
+    border: medium none;
+    cursor: pointer;
+    height: 43px;
+    margin: 10px;
+    width: 170px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 0.9em;
+}
+.separator{
+    width: 90%;
+    margin: 3px 5%;
+    background: white;
+    height: 1px;
+    float: left;
+}
+#pageFooter{
+    color: #4777A4;
+    float: left;
+    font-size: 0.5em;
+    margin: 5px 3px;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
