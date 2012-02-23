@@ -32,18 +32,19 @@ body{
     position: absolute;
     top: 0;
     vertical-align: middle;
-    width: 570px;
+    width: 588px;
 }
 #pageHeader ul.mainMenu li{
     float: left;
     height: 100%;
     line-height: 100%;
-    padding: 0 0 7px 24px;
+    margin-right: 3px;
+    text-align: center;
     vertical-align: middle;
 }
 #pageHeader ul.mainMenu li a{
     color: #FFFFFF;
-    float: left;
+    display: inline-block;
     font-size: 1em;
     font-weight: bold;
     line-height: 100%;
