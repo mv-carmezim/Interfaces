@@ -194,6 +194,6 @@ body{
     text-align: justify;
 }
 
-#defaultContent, #defaultService{
+#defaultContent, #defaultService, #defaultElement{
     display:none;
 }

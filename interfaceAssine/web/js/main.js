@@ -106,8 +106,6 @@ var plans = {
 $(function() {
 	Builder.elements = elements;
 	Builder.plans = plans;
-	Builder.parent = $("#pageContent");
-	Builder.defaultElement = $("#defaultContent");
 	
     // Turn Debug on only under development mode
 	//Builder.debug = true;

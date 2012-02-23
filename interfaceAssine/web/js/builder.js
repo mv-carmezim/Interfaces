@@ -1,8 +1,6 @@
 var Builder = {	    	
     'plans': {},
-	'parent': null,
 	'elements': {},
-	'defaultElement': null,
 	'totals' : {},
 	'debug': false,
 	'css':{
@@ -11,23 +9,57 @@ var Builder = {
 		'initial': '.initialValue',
 		'siteValue': '.siteValue',
 		'defaultService': '#defaultService',
-		'services': '.services'		
+		'services': '.services',
+        'defaultElement': '#defaultElement',
+        'defaultContent': '#defaultContent',
+        'serviceName': '.serviceName',
+        'tooltip': '.showBaloon',
+        'clearButton': '.clearButton'
 	},
 	
     build: function () {
-				   
 		Builder.log("starting to create the plans");		
 		Builder.createPlans(Builder.plans)
-		Builder.log("plan´s creation finished !");
+		Builder.log("plans creation finished !");
 		
 		Builder.log("starting to create the elements");
-		//Builder.createElements();
+        Builder.createElements(Builder.elements);
 		Builder.log("finished to create the elements");
 		
-		Builder.log("calculation starting...");
-		Builder.startCalculation();
-		Builder.log("calculation started");
+		Builder.log("Listeners starting...");
+		Builder.startListeners();
+		Builder.log("Listeners started");
     },
+
+	createElements: function(plans) {
+        var elementDiv;      
+        $.each(plans, function(key, plan) {
+			Builder.log("creating element :" + plan.getDisplayName());
+
+			elementDiv = Builder.createElement(key, plan);
+			
+			Builder.log("appending element : " + plan.getDisplayName());
+			$(elementDiv).appendTo($(Builder.get("defaultElement")).parent());
+
+			Builder.log("finished creating element :" + plan.getDisplayName());            
+        });
+	},
+
+    createElement: function(key, plan) {
+		var clone = $(Builder.get("defaultElement")).clone();				
+		Builder.log("creating element's li : " + plan.getDisplayName());
+
+		//Changing the id
+		clone.attr("id", "");
+		
+		//Setting the new values of fields
+		Builder.setValue(clone.find(Builder.get("serviceName")), plan.getDisplayName());
+        clone.find(Builder.get("tooltip")).attr("title",plan.getTooltip());
+		
+		Builder.log("elements's li created !");
+		
+		return clone;
+	},
 	
 	createPlans: function(plans) {
 		var planDiv;
@@ -37,15 +69,22 @@ var Builder = {
 			planDiv = Builder.createCheckBox(planDiv, Builder.elements);
 			
 			Builder.log("appending plan : " + plan.getDisplayName());
-			$(planDiv).appendTo(Builder.defaultElement.parent());
+			$(planDiv).appendTo($(Builder.get("defaultContent")).parent());
 			
 			Builder.log("finished creating " + plan.getDisplayName() + "plan");
 		});
 	},
 	
-	startCalculation: function() {		
-		$("input.services").change(Builder.updatePrice);		
+	startListeners: function() {		
+		$(Builder.get("services")).change(Builder.updatePrice);
+        $(Builder.get("clearButton")).click(Builder.cleanBoxes);		
 	},
+
+
+    cleanBoxes: function() {	  	
+        $("input[type=checkbox]:checked").attr("checked",false);
+        Builder.updatePrice();
+    },
 	
 	updatePrice: function() {
 		$(".contentBox").each(function() {
@@ -54,11 +93,11 @@ var Builder = {
 
 			totalValue.val(initialValue.val());
 			
-			$(this).find(".boxServices .services:checked").each(function() {
+			$(this).find(Builder.get("services") + ":checked").each(function() {
 				totalValue.val(parseFloat(totalValue.val()) + parseFloat($(this).attr("alt")));
 			});
 			
-			$(this).find("span.siteValue").each(function() {
+			$(this).find(Builder.get("siteValue")).each(function() {
 				$(this).html(Builder.moneyFormat(totalValue.val()));
 				
 				if (parseFloat(totalValue.val()) > parseFloat(initialValue.val())) {
@@ -96,7 +135,7 @@ var Builder = {
 	},
 	
 	createPlan: function(key, plan) {
-		var clone = Builder.defaultElement.clone();				
+		var clone = $(Builder.get("defaultContent")).clone();				
 		Builder.log("creating plan's div : " + plan.getDisplayName());
 
 		//Changing the id
@@ -135,13 +174,11 @@ var Builder = {
 		}
 
 		// add at least one integer digit
-
 		if (b_first) {
 			s_result = '0.' +  s_result;
 		}
 
 		// apply formatting and return
-
 		return b_negative ? '(R$ ' + s_result + ')' : 'R$ ' + s_result;
 	},
 	
