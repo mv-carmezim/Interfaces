@@ -1,0 +1,9 @@
+.tooltip{
+    background-image: url("img/tooltip/blue_arrow.png");
+    color: white;
+    font-size: 0.8em;
+    height: 84px;
+    padding: 12px 12px 25px;
+    text-align: left;
+    width: 176px;
+}
