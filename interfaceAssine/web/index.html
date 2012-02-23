@@ -6,7 +6,10 @@
 
         <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
         <script type="text/javascript" src="js/jquery-1.2.6.tools.min.js"></script>
-        <script type="text/javascript" src="js/functions.js"></script>
+		<script type="text/javascript" src="js/element.js"></script>
+		<script type="text/javascript" src="js/plan.js"></script>
+		<script type="text/javascript" src="js/builder.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
 
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/tooltip.css">
@@ -33,132 +36,79 @@
                     <label class="boxSubTitle">Selecione os serviços abaixo</label>
 
                     <ul class="boxServices">
-                        <li>Kit Hospedagem
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Integração com redes
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Facebook
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Twitter
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Orkut
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Youtube
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Google Maps
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Flickr
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Foursquare
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>SEO
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Estatísticas Básicas
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Pesquisa de Marketing
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
-                        <li>Facebook Avançado
-					<img class="showBaloon" title="Testando Tooltip"/>
-				</li>
+                        <li>
+							Kit Hospedagem
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Integração com redes
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Facebook
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Twitter
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Orkut
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Youtube
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Google Maps
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Flickr
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Foursquare
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							SEO
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Estatísticas Básicas
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Pesquisa de Marketing
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
+                        <li>
+							Facebook Avançado
+							<img class="showBaloon" title="Testando Tooltip"/>
+						</li>
                     </ul>
                 </div>
-                <div id="contentCard" class="contentBox">
-                    <label class="boxTitle">Cartão Web</label>
-                    <img class="showBaloon" title="Testando Tooltip"/>
-                    <label class="boxSubTitle">Recomendação (579)</label>
+				
+                <div id="defaultContent" class="contentBox">
+                    <label class="boxTitle"></label>
+                    <span class="showBaloon"></span>
+                    <label class="boxSubTitle">Recomendação (<span class="advice">579</span>)</label>
 
-                    <input type="hidden" name="initialValue" value="200">
-                    <input type="hidden" name="totalValue" value="0">
+                    <input type="hidden" class="initialValue" name="initialValue" value="0">
+                    <input type="hidden" class="totalValue" name="totalValue" value="0">
                     <span class="siteValue"></span>
-                    <span class="separator">&nbsp;</span>
-
-                    <form action="" method="post">
-
-                        <ul class="boxServices">
-                            <li class="selected"> &nbsp; </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="20.35" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="40" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="60" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="60" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="20" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="40" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="60" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="20" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="35" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="37" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="23" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="12" > </li>
-                        </ul>
-                    </form>
-                </div>
-                <div id="contentPlus" class="contentBox">
-                    <label class="boxTitle">Web Mais</label>
-                    <img class="showBaloon" title="Testando Tooltip"/>
-                    <label class="boxSubTitle">Recomendação (579)</label>
-
-                    <input type="hidden" name="initialValue" value="300">
-                    <input type="hidden" name="totalValue" value="0">
-                    <span class="siteValue"></span>
+					
                     <span class="separator">&nbsp;</span>
 
                     <form action="" method="post">
                         <ul class="boxServices">
                             <li class="selected"> &nbsp; </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="20" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="40" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="60" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="60" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="20" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="40" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="60" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="20" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="35" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="37" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="23" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="12" > </li>
+                            <li id="defaultService"> <input type="checkbox" name="services[]" class="services" alt="20.35" > </li>
                         </ul>
                     </form>
-                </div>
-                <div id="contentPremium" class="contentBox">
-                    <label class="boxTitle">Web Premium</label>
-                    <img class="showBaloon" title="Testando Tooltip"/>
-                    <label class="boxSubTitle">Recomendação (579)</label>
-
-                    <input type="hidden" name="initialValue" value="400">
-                    <input type="hidden" name="totalValue" value="0">
-                    <span class="siteValue"></span>
-                    <span class="separator">&nbsp;</span>
-
-                    <form action="" method="post" id="formPremium">
-                        <ul class="boxServices">
-                            <li class="selected"> &nbsp; </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="20" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="40" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="60" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="60" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="20" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="40" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="60" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="20" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="35" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="37" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="23" > </li>
-                            <li> <input type="checkbox" name="services[]" class="services" alt="12" > </li>
-                        </ul>
-                    </form>
-                </div>
+                </div>                
 
             </div>
 
