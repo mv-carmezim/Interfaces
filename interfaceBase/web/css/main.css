@@ -5,50 +5,57 @@
 }
 body{
     background-image:url("img/base_background.png");
-    background-position:center 0;
+    background-position: center 2px;
+    background-repeat: no-repeat;
     text-align:center;
 }
 #page{
+    margin: 58px auto;
+    top: 0;
     width: 841px;
-    margin: 3% auto;
-
 }
 #pageHeader{
     float: left;
+    position: absolute;
     width: 100%;
 }
 #pageHeader img.logo{
     float:left;
-    margin-right:10px;
-    margin-top:5px;
+    margin-top: -11px;
 }
 #pageHeader ul.mainMenu{
     float: left;
     font-size: 0.85em;
-    left: 0;
+    height: 50px;
+    left: 250px;
     list-style-type: none;
-    margin-left: 4px;
-    position: relative;
-    top: 20px;
+    position: absolute;
+    top: 0;
     vertical-align: middle;
     width: 570px;
 }
 #pageHeader ul.mainMenu li{
-    float:left;
-    padding-left:24px;
-    padding-top:10px;
+    float: left;
+    height: 100%;
+    line-height: 100%;
+    padding: 0 0 7px 24px;
+    vertical-align: middle;
 }
 #pageHeader ul.mainMenu li a{
-    color:#FFFFFF;
-    float:left;
-    font-size:1em;
-    font-weight:bold;
-    text-decoration:none;
+    color: #FFFFFF;
+    float: left;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 100%;
+    margin-top: 16px;
+    text-decoration: none;
+    vertical-align: middle;
 }
 #pageContent{
     float: left;
-    width: 100%;
+    margin-top: 62px;
     text-align: left;
+    width: 100%;
 }
 #pageContent .contentTitle{
     color:white;
@@ -60,20 +67,20 @@ body{
     padding-top:25px;
 }
 #pageContent .contentImageDecorator{
-    float:right;
-    position:absolute;
-    top:249px;
+    float: right;
+    position: absolute;
+    top: 251px;
 }
 #pageContent .mainContent{
-    color:#09233D;
-    float:left;
-    font-family:Trebuchet MS,sans-serif;
-    font-size:0.7em;
-    height:372px;
-    margin-top:127px;
-    overflow:auto;
-    padding:10px;
-    width:100%;
+    color: #09233D;
+    float: left;
+    font-family: Trebuchet MS,sans-serif;
+    font-size: 0.7em;
+    height: 372px;
+    margin-top: 127px;
+    overflow: auto;
+    padding: 10px;
+    width: 100%;
 }
 #pageContent .mainContent p{
     margin-top: 5px;
