@@ -1,6 +1,6 @@
 ﻿/**
 *
-* Falta criar os elementos da esquerda, criar os botoes juntos com os plans e tooltips ( =/ )
+* Falta criar os botoes juntos com os plans
 *
 */
 var elements = {
@@ -107,7 +107,7 @@ $(function() {
 	Builder.elements = elements;
 	Builder.plans = plans;
 	
-    // Turn Debug on only under development mode
+    	// Turn Debug on only under development mode
 	//Builder.debug = true;
 	
 	Builder.build();
