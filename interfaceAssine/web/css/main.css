@@ -195,15 +195,6 @@ body{
     text-align: justify;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+#defaultContent, #defaultService, #defaultElement{
+    display:none;
+}
