@@ -7,100 +7,116 @@ var elements = {
 	'integracaoRedes' : new Element({ 
 		'pricingGroup': 'A', 
 		'displayName': 'Integração com redes', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'facebook' : new Element({ 
 		'pricingGroup': 'A', 
 		'displayName': 'Facebook', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'twitter' : new Element({ 
 		'pricingGroup': 'A', 
 		'displayName': 'Twitter', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'orkut' : new Element({ 
 		'pricingGroup': 'A', 
 		'displayName': 'Orkut', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'youtube' : new Element({ 
 		'pricingGroup': 'B', 
 		'displayName': 'Youtube', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'gmaps' : new Element({
 		'pricingGroup': 'B', 
 		'displayName': 'Google Maps', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'flickr' : new Element({
 		'pricingGroup': 'B', 
 		'displayName': 'Flickr', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'foursquare' : new Element({
 		'pricingGroup': 'B', 
 		'displayName': 'Foursquare', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'seo' : new Element({
 		'pricingGroup': 'C', 
 		'displayName': 'SEO', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'estatisticaBasica' : new Element({
 		'pricingGroup': 'C', 
 		'displayName': 'Estatísticas Básicas', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'pesquisaMarketing' : new Element({
 		'pricingGroup': 'C', 
 		'displayName': 'Pesquisa de Marketing', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	}),
 	
 	'facebookAvancado' : new Element({
 		'pricingGroup': 'C', 
 		'displayName': 'Facebook Avançado', 
-		'tooltip':'Tooltip qualquer'
+		'tooltip': 'Tooltip qualquer'
 	})
+	
+	//To add a new element (do not forget the comma)
+	//'anyKey' : new Element({
+	//	'pricingGroup': 'A|B|C', 
+	//	'displayName': 'The name that will be displayed', 
+	//	'tooltip':'The tooltip text'
+	//})
 };
 
 var plans = {
 	'cartaoWeb' : new Plan({
-		'initialPrice':199.90,
+		'initialPrice': 199.90,
 		'displayName': 'Cartão Web', 
-		'tooltip':'Outra Tooltip',
-		'advice':'579',
-		'id':'contentCard' 
+		'tooltip': 'Outra Tooltip',
+		'advice': '579',
+		'id': 'contentCard' 
 	}),
 	
 	'webMais' : new Plan({
-		'initialPrice':299.90,
+		'initialPrice': 299.90,
 		'displayName': 'Web Mais', 
-		'tooltip':'Outra Tooltip',
-		'advice':'579',
-		'id':'contentPlus'
+		'tooltip': 'Outra Tooltip',
+		'advice': '579',
+		'id': 'contentPlus'
 	}),
 	
 	'webPremium' : new Plan({
-		'initialPrice':399.90,
+		'initialPrice': 399.90,
 		'displayName': 'Web Premium', 
-		'tooltip':'Outra Tooltip',
-		'advice':'579',
-		'id':'contentPremium'
+		'tooltip': 'Outra Tooltip',
+		'advice': '579',
+		'id': 'contentPremium'
 	})
+	
+	//To add a new Plan (do not forget the comma)
+	//'anyKey' : new Plan({
+	//	'initialPrice': 199.90, //price as double
+	//	'displayName': 'the name that will be displayed', 
+	//	'tooltip': 'the tooltip text',
+	//	'advice': '579', //number of recommendations as string
+	//	'id': 'idOfThePlan'
+	//})
 };
 
 $(function() {
