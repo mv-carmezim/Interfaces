@@ -4,10 +4,11 @@
     font-family: verdana, arial, sans-serif;
 }
 body{
-    background-image:url("img/base_background.png");
+    background-color: #002A52;
+    background-image: url("img/base_background.png");
     background-position: center 2px;
     background-repeat: no-repeat;
-    text-align:center;
+    text-align: center;
 }
 #page{
     margin: 38px auto;
