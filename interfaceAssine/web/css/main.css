@@ -13,7 +13,7 @@ body{
 #page{
     margin: 38px auto;
     top: 0;
-    width: 841px;
+    width: 898px;
 }
 #pageHeader{
     float: left;
@@ -27,7 +27,7 @@ body{
     float: left;
     font-size: 0.85em;
     height: 50px;
-    left: 250px;
+    left: 275px;
     list-style-type: none;
     position: absolute;
     top: 0;
