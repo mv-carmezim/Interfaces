@@ -5,6 +5,7 @@ var Builder = {
     'debug': false,
     'css':{
         'title': '.boxTitle',
+        'id': '.id',
         'advice': '.advice',
         'initial': '.initialValue',
         'siteValue': '.siteValue',
@@ -14,7 +15,8 @@ var Builder = {
         'defaultContent': '#defaultContent',
         'serviceName': '.serviceName',
         'tooltip': '.showBaloon',
-        'clearButton': '.clearButton'
+        'clearButton': '.clearButton',
+        'contentBox': '.contentBox'
     },
 
     build: function () {
@@ -87,6 +89,7 @@ var Builder = {
     },
 
     updatePrice: function() {
+        var selectedID = $(this).parents(Builder.get("contentBox")).find(Builder.get("id")).val();
         $(".contentBox").each(function() {
             var totalValue = $(this).find("input[name=totalValue]");
             var initialValue = $(this).find("input[name=initialValue]");
@@ -94,16 +97,22 @@ var Builder = {
             totalValue.val(initialValue.val());
 
             $(this).find(Builder.get("services") + ":checked").each(function() {
-                totalValue.val(parseFloat(totalValue.val()) + parseFloat($(this).attr("alt")));
+                totalValue.val(parseFloat(totalValue.val()) + parseFloat($(this).val()));
             });
 
-            $(this).find(Builder.get("siteValue")).each(function() {
+
+            var siteValues = $(this).find(Builder.get("siteValue"));
+            siteValues.removeClass("selected");
+            siteValues.each(function() {
                 $(this).html(Builder.moneyFormat(totalValue.val()));
 
-                if (parseFloat(totalValue.val()) > parseFloat(initialValue.val())) {
-                    $(this).addClass("selected");
-                } else {
-                    $(this).removeClass("selected");
+                
+                if ($(this).parents(Builder.get("contentBox")).find(Builder.get("id")).val() == selectedID) {
+                    if (parseFloat(totalValue.val()) > parseFloat(initialValue.val())) {
+                        $(this).addClass("selected");
+                    } else {
+                        $(this).removeClass("selected");
+                    }
                 }
             });
         });
@@ -124,7 +133,7 @@ var Builder = {
             clone.attr("id","");
 
             Builder.log("creating checkbox : " + element.getDisplayName() + " and changing the value to : " + element.getPrice());
-            clone.find("input[type=checkbox]").attr("alt",element.getPrice());
+            clone.find("input[type=checkbox]").val(element.getPrice());
             Builder.log("checkbox " + element.getDisplayName() + " created !");
 
             clone.appendTo(plan.find(Builder.get("defaultService")).parent());
@@ -142,6 +151,7 @@ var Builder = {
         clone.attr("id", plan.getId());
 
         //Setting the new values of fields
+        Builder.setValue(clone.find(Builder.get("id")), plan.getId());
         Builder.setValue(clone.find(Builder.get("title")), plan.getDisplayName());
         Builder.setValue(clone.find(Builder.get("advice")), plan.getAdvice());
         Builder.setValue(clone.find(Builder.get("initial")), plan.getInitialPrice());
