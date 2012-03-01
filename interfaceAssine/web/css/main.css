@@ -152,6 +152,7 @@ body{
     height:16px;
     width:16px;
     display: inline-block;
+    border: none !important;
 }
 #pageContent .contentBox form ul.boxServices  li{
     background-image: none;
