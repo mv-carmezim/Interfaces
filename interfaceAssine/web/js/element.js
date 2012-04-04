@@ -3,6 +3,7 @@ function Element(options) {
         'pricingGroup': 'A',
         'displayName': '',
         'tooltip': '',
+        'name': '',
         'pricing':{
             'A' : 19.90,
             'B' : 29.90,
@@ -22,6 +23,10 @@ Element.prototype = {
 
     getDisplayName: function() {
         return this.options.displayName;
+    },
+
+    getName: function() {
+        return this.options.name;
     },
 
     getTooltip: function() {

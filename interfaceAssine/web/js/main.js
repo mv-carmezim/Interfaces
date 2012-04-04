@@ -7,72 +7,84 @@ var elements = {
     'integracaoRedes' : new Element({
         'pricingGroup': 'A',
         'displayName': 'Integra&ccedil;&atilde;o com redes',
+        'name': 'integracaoRedes',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'facebook' : new Element({
         'pricingGroup': 'A',
         'displayName': 'Facebook',
+        'name': 'facebook',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'twitter' : new Element({
         'pricingGroup': 'A',
         'displayName': 'Twitter',
+        'name': 'twitter',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'orkut' : new Element({
         'pricingGroup': 'A',
         'displayName': 'Orkut',
+        'name': 'orkut',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'youtube' : new Element({
         'pricingGroup': 'B',
         'displayName': 'Youtube',
+        'name': 'youtube',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'gmaps' : new Element({
         'pricingGroup': 'B',
         'displayName': 'Google Maps',
+        'name': 'gmaps',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'flickr' : new Element({
         'pricingGroup': 'B',
         'displayName': 'Flickr',
+        'name': 'flickr',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'foursquare' : new Element({
         'pricingGroup': 'B',
         'displayName': 'Foursquare',
+        'name': 'foursquare',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'seo' : new Element({
         'pricingGroup': 'C',
         'displayName': 'SEO',
+        'name': 'seo',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'estatisticaBasica' : new Element({
         'pricingGroup': 'C',
         'displayName': 'Estatísticas Básicas',
+        'name': 'estatisticaBasica',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'pesquisaMarketing' : new Element({
         'pricingGroup': 'C',
         'displayName': 'Pesquisa de Marketing',
+        'name': 'pesquisaMarketing',
         'tooltip': 'Tooltip qualquer'
     }),
 
     'facebookAvancado' : new Element({
         'pricingGroup': 'C',
         'displayName': 'Facebook Avançado',
+        'name': 'facebookAvancado',
         'tooltip': 'Tooltip qualquer'
     })
 

@@ -133,7 +133,9 @@ var Builder = {
             clone.attr("id","");
 
             Builder.log("creating checkbox : " + element.getDisplayName() + " and changing the value to : " + element.getPrice());
-            clone.find("input[type=checkbox]").val(element.getPrice());
+            var check = clone.find("input[type=checkbox]")
+            check.val(element.getPrice());
+            check.attr("name","services["+ element.getName() + "]");
             Builder.log("checkbox " + element.getDisplayName() + " created !");
 
             clone.appendTo(plan.find(Builder.get("defaultService")).parent());
