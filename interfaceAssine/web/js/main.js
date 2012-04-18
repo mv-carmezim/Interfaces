@@ -5,6 +5,7 @@
  */
 var elements = {
     'integracaoRedes' : new Element({
+        'id': 'integracaoRedes',
         'pricingGroup': 'A',
         'displayName': 'Integra&ccedil;&atilde;o com redes',
         'name': 'integracaoRedes',
@@ -12,6 +13,7 @@ var elements = {
     }),
 
     'facebook' : new Element({
+        'id': 'facebook',
         'pricingGroup': 'A',
         'displayName': 'Facebook',
         'name': 'facebook',
@@ -19,6 +21,7 @@ var elements = {
     }),
 
     'twitter' : new Element({
+        'id': 'twitter',
         'pricingGroup': 'A',
         'displayName': 'Twitter',
         'name': 'twitter',
@@ -26,6 +29,7 @@ var elements = {
     }),
 
     'orkut' : new Element({
+        'id': 'orkut',
         'pricingGroup': 'A',
         'displayName': 'Orkut',
         'name': 'orkut',
@@ -33,6 +37,7 @@ var elements = {
     }),
 
     'youtube' : new Element({
+        'id': 'youtube',
         'pricingGroup': 'B',
         'displayName': 'Youtube',
         'name': 'youtube',
@@ -40,6 +45,7 @@ var elements = {
     }),
 
     'gmaps' : new Element({
+        'id': 'gmaps',
         'pricingGroup': 'B',
         'displayName': 'Google Maps',
         'name': 'gmaps',
@@ -47,6 +53,7 @@ var elements = {
     }),
 
     'flickr' : new Element({
+        'id': 'flickr',
         'pricingGroup': 'B',
         'displayName': 'Flickr',
         'name': 'flickr',
@@ -54,6 +61,7 @@ var elements = {
     }),
 
     'foursquare' : new Element({
+        'id': 'foursquare',
         'pricingGroup': 'B',
         'displayName': 'Foursquare',
         'name': 'foursquare',
@@ -61,6 +69,7 @@ var elements = {
     }),
 
     'seo' : new Element({
+        'id': 'seo',
         'pricingGroup': 'C',
         'displayName': 'SEO',
         'name': 'seo',
@@ -68,6 +77,7 @@ var elements = {
     }),
 
     'estatisticaBasica' : new Element({
+        'id': 'estatisticaBasica',
         'pricingGroup': 'C',
         'displayName': 'Estatísticas Básicas',
         'name': 'estatisticaBasica',
@@ -75,6 +85,7 @@ var elements = {
     }),
 
     'pesquisaMarketing' : new Element({
+        'id': 'pesquisaMarketing',
         'pricingGroup': 'C',
         'displayName': 'Pesquisa de Marketing',
         'name': 'pesquisaMarketing',
@@ -82,6 +93,7 @@ var elements = {
     }),
 
     'facebookAvancado' : new Element({
+        'id': 'facebookAvancado',
         'pricingGroup': 'C',
         'displayName': 'Facebook Avançado',
         'name': 'facebookAvancado',
@@ -140,7 +152,15 @@ $(function() {
 
     Builder.build();
 
+    Builder.generateMap();
+
     toolTipDarkMagic("img.showBaloon");
+
+    $("button[type=button]").click(function(){
+        var formId = $(this).attr("class").replace("button-","form-");
+        $("#map").appendTo($("#" + formId));
+        $("#" + formId).submit();
+    });
 });
 
 // Used to start tooltip and create the bouncy effect

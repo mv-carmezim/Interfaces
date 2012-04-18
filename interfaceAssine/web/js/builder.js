@@ -18,10 +18,22 @@ var Builder = {
         'clearButton': '.clearButton',
         'contentBox': '.contentBox'
     },
+    
+    generateMap: function() {
+        var plans = Builder.plans;
+        $.each(plans, function(key, plan) {
+            $("<input type='hidden' name='plans[" + plan.getId() + "]' value='" + plan.getDisplayName() + "' />").appendTo($("#map"));
+        });
+
+        var elements = Builder.elements;
+        $.each(elements, function(key, element) {
+            $("<input type='hidden' name='elements[" + element.getId() + "]' value='" + element.getDisplayName() + "' />").appendTo($("#map"));
+        });
+    },
 
     build: function () {
         Builder.log("starting to create the plans");
-        Builder.createPlans(Builder.plans)
+        Builder.createPlans(Builder.plans);
         Builder.log("plans creation finished !");
 
         Builder.log("starting to create the elements");
@@ -149,17 +161,23 @@ var Builder = {
         var clone = $(Builder.get("defaultContent")).clone();
         Builder.log("creating plan's div : " + plan.getDisplayName());
 
-        //Changing the id
+        //Changing the id and class
         clone.attr("id", plan.getId());
+        clone.find("form").attr("id","form-" + plan.getId());
 
         //Setting the new values of fields
-        Builder.setValue(clone.find(Builder.get("id")), plan.getId());
+        Builder.setValue(clone.find(Builder.get("id")), plan.getId());        
         Builder.setValue(clone.find(Builder.get("title")), plan.getDisplayName());
         Builder.setValue(clone.find(Builder.get("advice")), plan.getAdvice());
         Builder.setValue(clone.find(Builder.get("initial")), plan.getInitialPrice());
         Builder.setValue(clone.find(Builder.get("siteValue")), Builder.moneyFormat(plan.getInitialPrice()));
 
         Builder.log("plan's div created !");
+
+        var button = $("#defaultButton").clone();
+        button.addClass("button-" + plan.getId());
+        button.attr("id","");
+        button.appendTo($("#submitArea"));
 
         return clone;
     },
@@ -203,7 +221,7 @@ var Builder = {
         } else {
             element.html(data);
         }
-    },
+    },    
 
     log: function(obj, iterate) {
         if (Builder.debug) {

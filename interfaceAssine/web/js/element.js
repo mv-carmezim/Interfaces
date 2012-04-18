@@ -1,5 +1,6 @@
 function Element(options) {
     var defaults = {
+        'id': '',
         'pricingGroup': 'A',
         'displayName': '',
         'tooltip': '',
@@ -31,5 +32,9 @@ Element.prototype = {
 
     getTooltip: function() {
         return this.options.tooltip;
+    },
+
+    getId: function() {
+        return this.options.id;
     }
 };

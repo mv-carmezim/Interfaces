@@ -199,6 +199,6 @@ body{
     text-align: justify;
 }
 
-#defaultContent, #defaultService, #defaultElement{
+#defaultContent, #defaultService, #defaultElement, #defaultButton, #map{
     display:none;
 }
